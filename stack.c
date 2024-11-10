@@ -6,7 +6,7 @@
 /*   By: hverdugo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 15:43:26 by hverdugo          #+#    #+#             */
-/*   Updated: 2024/11/10 01:49:05 by hverdugo         ###   ########.fr       */
+/*   Updated: 2024/11/10 23:47:51 by hverdugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ void	stack_fill(t_stack **stack, t_stack *snew)
 
 t_stack	*end(t_stack *stack)
 {
+	if (stack == NULL || stack->next == NULL)
+		return (NULL);
 	while (stack && stack->next != NULL)
 		stack = stack->next;
 	return (stack);

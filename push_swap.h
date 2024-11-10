@@ -6,7 +6,7 @@
 /*   By: hverdugo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 14:22:02 by hverdugo          #+#    #+#             */
-/*   Updated: 2024/11/10 01:55:10 by hverdugo         ###   ########.fr       */
+/*   Updated: 2024/11/10 23:54:39 by hverdugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,20 @@ void	free_stack(t_stack **stack);
 void	stack_bucle(t_stack **stack, int *value);
 void	stack_fill(t_stack **stack, t_stack *snew);
 void	ft_free(char **str, int j);
+void	swap(t_stack **stack);
+void	swap_a(t_stack **stack);
+void	swap_b(t_stack **stack);
+void	swap_ss(t_stack **stack_a, t_stack **stack_b);
+void	rotate(t_stack **stack);
+void	rotate_a(t_stack **stack);
+void	rotate_b(t_stack **stack);
+void	rotate_rr(t_stack **stack_a, t_stack **stack_b);
+void	rrotate(t_stack **stack);
+void	rrotate_a(t_stack **stack);
+void	rrotate_b(t_stack **stack);
+void	rrotate_rrr(t_stack **stack_a, t_stack **stack_b);
 t_stack	*end(t_stack *stack);
+t_stack	*penultimate(t_stack *stack);
 t_stack	*stack_new(int value);
 char	**matcpy(char **argv, int argc);
 #endif

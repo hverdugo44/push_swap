@@ -6,7 +6,7 @@
 /*   By: hverdugo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 16:19:33 by hverdugo          #+#    #+#             */
-/*   Updated: 2024/11/10 02:01:28 by hverdugo         ###   ########.fr       */
+/*   Updated: 2024/11/10 22:47:01 by hverdugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ int	arg_ver(char **argv)
 		in2 = 0;
 		while (argv[in1][in2])
 		{
-			if ((argv[in1][in2] < '0' || argv[in1][in2] > '9') && argv[in1][in2] != '-')
+			if ((argv[in1][in2] < '0' || argv[in1][in2] > '9')
+				&& argv[in1][in2] != '-')
 				return (1);
 			in2++;
 		}

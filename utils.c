@@ -6,7 +6,7 @@
 /*   By: hverdugo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 01:38:53 by hverdugo          #+#    #+#             */
-/*   Updated: 2024/11/10 01:51:04 by hverdugo         ###   ########.fr       */
+/*   Updated: 2024/11/10 23:47:00 by hverdugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,13 @@ void	ft_free(char **str, int j)
 	}
 	free(str);
 	str = NULL;
+}
+
+t_stack	*penultimate(t_stack *stack)
+{
+	if (stack == NULL || stack->next == NULL)
+		return (NULL);
+	while (stack->next->next != NULL)
+		stack = stack->next;
+	return (stack);
 }
