@@ -1,44 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rrotate.c                                          :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hverdugo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/10 23:12:06 by hverdugo          #+#    #+#             */
-/*   Updated: 2024/11/11 00:55:08 by hverdugo         ###   ########.fr       */
+/*   Created: 2024/11/11 00:32:28 by hverdugo          #+#    #+#             */
+/*   Updated: 2024/11/11 00:52:00 by hverdugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rrotate(t_stack **stack)
+void	push(t_stack **src, t_stack **dest)
 {
 	t_stack	*temp;
-	t_stack	*fin;
 
-	temp = (*stack);
-	fin = penultimate(*stack);
-	(*stack) = end(*stack);
-	(*stack)->next = temp;
-	fin->next = NULL;
+	if (!(*stack))
+		return ;
+	temp = (*src)->next;
+	(*src)->next = *dest;
+	*dest = *src;
+	*src = temp;
 }
 
-void	rrotate_a(t_stack **stack)
+void	push_a(t_stack **stack_a, t_stack **stack_b)
 {
-	rrotate(stack);
-	write(1, "rra\n", 4);
+	push(stack_a, stack_b);
+	write(1, "pa\n", 3);
 }
 
-void	rrotate_b(t_stack **stack)
+void	push_b(t_stack **stack_a, t_stack **stack_b)
 {
-	rrotate(stack);
-	write(1, "rrb\n", 4);
-}
-
-void	rrotate_rrr(t_stack **stack_a, t_stack **stack_b)
-{
-	rrotate(stack_a);
-	rrotate(stack_b);
-	write(1, "rrr\n", 4);
+	push(stack_b, stack_a);
+	write(1, "pb\n", 3);
 }

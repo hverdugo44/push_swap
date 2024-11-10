@@ -6,7 +6,7 @@
 /*   By: hverdugo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 14:22:02 by hverdugo          #+#    #+#             */
-/*   Updated: 2024/11/10 23:54:39 by hverdugo         ###   ########.fr       */
+/*   Updated: 2024/11/11 00:54:45 by hverdugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,9 @@ void	rrotate(t_stack **stack);
 void	rrotate_a(t_stack **stack);
 void	rrotate_b(t_stack **stack);
 void	rrotate_rrr(t_stack **stack_a, t_stack **stack_b);
+void	push(t_stack **src, t_stack **dest);
+void	push_a(t_stack **stack_a, t_stack **stack_b);
+void	push_b(t_stack **stack_a, t_stack **stack_b);
 t_stack	*end(t_stack *stack);
 t_stack	*penultimate(t_stack *stack);
 t_stack	*stack_new(int value);
