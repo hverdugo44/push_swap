@@ -6,7 +6,7 @@
 /*   By: hverdugo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 14:22:02 by hverdugo          #+#    #+#             */
-/*   Updated: 2024/11/11 00:54:45 by hverdugo         ###   ########.fr       */
+/*   Updated: 2024/11/11 13:12:44 by hverdugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,11 @@ typedef struct s_stack
 	struct s_stack	*next;
 }	t_stack;
 int		arg_ver(char **argv);
+int		size_list(t_stack *stack);
 int		*eval_rep(char **str, int length);
 int		*arg_eval(char **argv, int argc, int *length);
 int		*rep(int *integers, int length);
+int		is_sorted(t_stack *stack);
 void	free_stack(t_stack **stack);
 void	stack_bucle(t_stack **stack, int *value);
 void	stack_fill(t_stack **stack, t_stack *snew);
@@ -52,6 +54,7 @@ void	rrotate_rrr(t_stack **stack_a, t_stack **stack_b);
 void	push(t_stack **src, t_stack **dest);
 void	push_a(t_stack **stack_a, t_stack **stack_b);
 void	push_b(t_stack **stack_a, t_stack **stack_b);
+void	expected_pos(t_stack **stack);
 t_stack	*end(t_stack *stack);
 t_stack	*penultimate(t_stack *stack);
 t_stack	*stack_new(int value);

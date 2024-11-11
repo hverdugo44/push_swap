@@ -6,7 +6,7 @@
 /*   By: hverdugo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 01:38:53 by hverdugo          #+#    #+#             */
-/*   Updated: 2024/11/10 23:47:00 by hverdugo         ###   ########.fr       */
+/*   Updated: 2024/11/11 13:50:35 by hverdugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,17 @@ t_stack	*penultimate(t_stack *stack)
 	while (stack->next->next != NULL)
 		stack = stack->next;
 	return (stack);
+}
+
+int	size_list(t_stack *stack)
+{
+	int	i;
+
+	i = 0;
+	while (stack->next != NULL)
+	{
+		stack = stack->next;
+		i++;
+	}
+	return (i);
 }
