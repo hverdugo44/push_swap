@@ -6,7 +6,7 @@
 #    By: hverdugo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/12 17:36:42 by hverdugo          #+#    #+#              #
-#    Updated: 2024/11/13 00:17:20 by hverdugo         ###   ########.fr        #
+#    Updated: 2024/11/13 02:04:43 by hverdugo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,10 +24,10 @@ OFILES = $(FILES:.c=.o)
 
 all: $(LIBFT) $(NAME)
 
-$(NAME): $(OFILES) $(INCLUDE) Makefile
+$(NAME): $(OFILES) $(INCLUDE) Makefile $(LIBFT)
 	$(CC) $(FLAGS) $(OFILES) libft.a -o $(NAME)
 
-LIBFT: 
+$(LIBFT):
 	make bonus -C libft
 	cp libft/libft.a .
 
@@ -40,7 +40,7 @@ clean:
 
 fclean:
 	make fclean -C libft
-	rm -rf $(NAME) $(OFILES)
+	rm -rf $(NAME) $(OFILES) libft.a
 
 re:
 	make fclean
