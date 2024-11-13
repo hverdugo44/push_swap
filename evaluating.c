@@ -6,7 +6,7 @@
 /*   By: hverdugo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 16:19:33 by hverdugo          #+#    #+#             */
-/*   Updated: 2024/11/10 22:47:01 by hverdugo         ###   ########.fr       */
+/*   Updated: 2024/11/12 17:59:59 by hverdugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	arg_ver(char **argv)
 	return (0);
 }
 
-int	*arg_eval(char **argv, int argc, int *length)
+int	*arg_eval(char **argv, int argc, long int *length)
 {
 	char	**str;
 	int		*res;
@@ -48,7 +48,7 @@ int	*arg_eval(char **argv, int argc, int *length)
 		return (NULL);
 	while (str[length[0]])
 		length[0]++;
-	if (arg_ver(str) == 1)
+	if (arg_ver(str) == 1 || length[0] > 2147483647)
 	{
 		ft_free(str, (length[0] - 1));
 		return (NULL);

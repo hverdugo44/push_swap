@@ -6,7 +6,7 @@
 /*   By: hverdugo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 01:38:53 by hverdugo          #+#    #+#             */
-/*   Updated: 2024/11/11 13:50:35 by hverdugo         ###   ########.fr       */
+/*   Updated: 2024/11/13 01:01:32 by hverdugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ char	**matcpy(char **argv, int argc)
 	return (str);
 }
 
-void	ft_free(char **str, int j)
+void	ft_free(char **str, long int j)
 {
 	while (j >= 0)
 	{
@@ -59,7 +59,7 @@ int	size_list(t_stack *stack)
 	int	i;
 
 	i = 0;
-	while (stack->next != NULL)
+	while (stack)
 	{
 		stack = stack->next;
 		i++;

@@ -6,7 +6,7 @@
 /*   By: hverdugo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 12:08:35 by hverdugo          #+#    #+#             */
-/*   Updated: 2024/11/11 13:51:16 by hverdugo         ###   ########.fr       */
+/*   Updated: 2024/11/12 18:36:26 by hverdugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,12 @@ void	expected_pos(t_stack **stack)
 		min = NULL;
 		while (temp)
 		{
-			if (temp->target == -1 && (!min || temp->num < min->num))
+			if (temp->index == -1 && (!min || temp->num < min->num))
 				min = temp;
 			temp = temp->next;
 		}
 		if (min)
-			min->target = j;
+			min->index = j;
 		j++;
 	}
 }
