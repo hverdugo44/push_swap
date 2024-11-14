@@ -6,7 +6,7 @@
 /*   By: hverdugo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 15:43:26 by hverdugo          #+#    #+#             */
-/*   Updated: 2024/11/11 13:27:59 by hverdugo         ###   ########.fr       */
+/*   Updated: 2024/11/13 23:18:18 by hverdugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,12 +54,12 @@ t_stack	*end(t_stack *stack)
 	return (stack);
 }
 
-void	stack_bucle(t_stack **stack, int *value)
+void	stack_bucle(t_stack **stack, int *value, int length)
 {
 	int	i;
 
 	i = 0;
-	while (value[i])
+	while (i < length)
 	{
 		stack_fill(stack, stack_new(value[i]));
 		i++;

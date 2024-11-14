@@ -6,13 +6,15 @@
 #    By: hverdugo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/12 17:36:42 by hverdugo          #+#    #+#              #
-#    Updated: 2024/11/13 02:04:43 by hverdugo         ###   ########.fr        #
+#    Updated: 2024/11/14 00:56:34 by hverdugo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
-FILES = push_swap.c evaluating.c eval_stack.c utils.c algorithm.c push.c rotate.c rrotate.c set_cost.c stack.c swap.c
+LIBFT = libft.a
+
+FILES = push_swap.c evaluating.c eval_stack.c utils.c algorithm.c push.c rotate.c rrotate.c set_cost.c stack.c swap.c find_target.c
 
 INCLUDE = push_swap.h
 
@@ -22,16 +24,16 @@ CC = cc
 
 OFILES = $(FILES:.c=.o)
 
-all: $(LIBFT) $(NAME)
+all: libft_compile $(NAME)
 
-$(NAME): $(OFILES) $(INCLUDE) Makefile $(LIBFT)
-	$(CC) $(FLAGS) $(OFILES) libft.a -o $(NAME)
-
-$(LIBFT):
+libft_compile:
 	make bonus -C libft
 	cp libft/libft.a .
 
-%.o: %.c
+$(NAME): $(OFILES) $(INCLUDE) Makefile libft.a
+	$(CC) $(FLAGS) $(OFILES) libft.a -o $(NAME)
+
+%.o: %.c $(INCLUDE)
 	$(CC) $(FLAGS) -c $< -o $@
 
 clean:

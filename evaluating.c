@@ -6,7 +6,7 @@
 /*   By: hverdugo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 16:19:33 by hverdugo          #+#    #+#             */
-/*   Updated: 2024/11/12 17:59:59 by hverdugo         ###   ########.fr       */
+/*   Updated: 2024/11/13 23:31:02 by hverdugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ int	*arg_eval(char **argv, int argc, long int *length)
 		return (NULL);
 	while (str[length[0]])
 		length[0]++;
+	printf("%ld\n", length[0]);
 	if (arg_ver(str) == 1 || length[0] > 2147483647)
 	{
 		ft_free(str, (length[0] - 1));
@@ -71,6 +72,12 @@ int	*eval_rep(char **str, int length)
 		integers[i] = ft_atoi(str[i]);
 		i++;
 	}
+	i = 0;
+	while (i < length)
+	{
+		printf("%d\n", integers[i]);
+		i++;
+	}
 	ft_free(str, length - 1);
 	return (rep(integers, length));
 }
@@ -84,7 +91,7 @@ int	*rep(int *integers, int length)
 	while (i < length)
 	{
 		j = i + 1;
-		while (integers[j])
+		while (j < length)
 		{
 			if (integers[i] == integers[j])
 			{

@@ -6,7 +6,7 @@
 /*   By: hverdugo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 21:00:09 by hverdugo          #+#    #+#             */
-/*   Updated: 2024/11/12 22:50:24 by hverdugo         ###   ########.fr       */
+/*   Updated: 2024/11/14 00:54:29 by hverdugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int		*arg_eval(char **argv, int argc, long int *length);
 int		*rep(int *integers, int length);
 int		is_sorted(t_stack *stack);
 void	free_stack(t_stack **stack);
-void	stack_bucle(t_stack **stack, int *value);
+void	stack_bucle(t_stack **stack, int *value, int length);
 void	stack_fill(t_stack **stack, t_stack *snew);
 void	ft_free(char **str, long int j);
 void	swap(t_stack **stack);
@@ -59,6 +59,7 @@ void	expected_pos(t_stack **stack);
 void	set_cost(t_stack **stack_a, t_stack **stack_b);
 void	fill_stackb(t_stack **stack_a, t_stack **stack_b);
 void	fill_pos(t_stack **stack_a, t_stack **stack_b);
+void	find_target(t_stack **stack_a, t_stack **stack_b, int length);
 t_stack	*end(t_stack *stack);
 t_stack	*penultimate(t_stack *stack);
 t_stack	*stack_new(int value);

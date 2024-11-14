@@ -6,7 +6,7 @@
 /*   By: hverdugo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 16:00:09 by hverdugo          #+#    #+#             */
-/*   Updated: 2024/11/13 01:46:02 by hverdugo         ###   ########.fr       */
+/*   Updated: 2024/11/13 13:11:28 by hverdugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,3 +54,16 @@ void	fill_pos(t_stack **stack_a, t_stack **stack_b)
 		temp = temp->next;
 	}
 }
+/*
+void	find_target(t_stack **stack_a, t_stack **stack_b)
+{
+	t_stack	*temp_a;
+	t_stack	*temp_b;
+
+	temp_a = *stack_a;
+	temp_b = *stack_b;
+	while (temp_b)
+	{
+		while (temp_a)
+		{
+*/
