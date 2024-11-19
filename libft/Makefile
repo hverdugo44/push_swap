@@ -6,7 +6,7 @@
 #    By: hverdugo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/03 15:11:10 by hverdugo          #+#    #+#              #
-#    Updated: 2024/09/25 16:39:48 by hverdugo         ###   ########.fr        #
+#    Updated: 2024/11/19 13:47:02 by hverdugo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,7 @@ $(NAME):$(OFILES) $(LIB) Makefile
 
 bonus : $(BONUS_NAME)
 
-$(BONUS_NAME):$(OFILES) $(OBONUS) $(LIB)
+$(BONUS_NAME):$(OFILES) $(OBONUS) $(LIB) Makefile
 	ar crs $(NAME) $(OBONUS) $(OFILES)
 	touch $(BONUS_NAME)
 

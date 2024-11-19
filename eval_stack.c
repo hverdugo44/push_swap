@@ -6,7 +6,7 @@
 /*   By: hverdugo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 12:08:35 by hverdugo          #+#    #+#             */
-/*   Updated: 2024/11/15 13:04:08 by hverdugo         ###   ########.fr       */
+/*   Updated: 2024/11/19 13:37:29 by hverdugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,17 @@ int	is_sorted(t_stack *stack)
 	i = 1;
 	j = size_list(stack);
 	temp = stack;
+	temp2 = end(stack);
+	temp2->next = stack;
 	while (temp->index != 1)
 		temp = temp->next;
 	while (i < j)
 	{
-		if (temp->next == NULL)
-		{
-			temp2 = temp;
-			temp->next = stack;
-		}
 		if (temp->index > temp->next->index)
+		{
+			temp2->next = NULL;
 			return (1);
+		}
 		temp = temp->next;
 		i++;
 	}

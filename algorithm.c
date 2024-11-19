@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hverdugo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/12 16:00:09 by hverdugo          #+#    #+#             */
-/*   Updated: 2024/11/15 17:14:21 by hverdugo         ###   ########.fr       */
+/*   Created: 2024/11/19 11:19:27 by hverdugo          #+#    #+#             */
+/*   Updated: 2024/11/19 13:53:49 by hverdugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ void	algorithm(t_stack **stack_a, t_stack **stack_b, int length)
 	int	j;
 
 	j = size_list(*stack_a);
+	expected_pos(stack_a);
 	if (j == 2)
 	{
 		if ((*stack_a)->num > (*stack_a)->next->num)
@@ -69,7 +70,6 @@ void	algorithm(t_stack **stack_a, t_stack **stack_b, int length)
 		three_stack(stack_a);
 	else
 		move(stack_a, stack_b, length);
-	j = size_list(*stack_a);
 	while ((*stack_a)->index != 1)
 	{
 		if ((*stack_a)->index <= (j + 1) / 2)
