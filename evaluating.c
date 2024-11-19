@@ -6,7 +6,7 @@
 /*   By: hverdugo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 16:19:33 by hverdugo          #+#    #+#             */
-/*   Updated: 2024/11/13 23:31:02 by hverdugo         ###   ########.fr       */
+/*   Updated: 2024/11/15 16:49:24 by hverdugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ int	*arg_eval(char **argv, int argc, long int *length)
 		return (NULL);
 	while (str[length[0]])
 		length[0]++;
-	printf("%ld\n", length[0]);
 	if (arg_ver(str) == 1 || length[0] > 2147483647)
 	{
 		ft_free(str, (length[0] - 1));
@@ -60,8 +59,9 @@ int	*arg_eval(char **argv, int argc, long int *length)
 
 int	*eval_rep(char **str, int length)
 {
-	int	i;
-	int	*integers;
+	long	x;
+	int		i;
+	int		*integers;
 
 	i = 0;
 	integers = (int *)ft_calloc(sizeof(int), length + 1);
@@ -69,13 +69,14 @@ int	*eval_rep(char **str, int length)
 		return (NULL);
 	while (i < length)
 	{
-		integers[i] = ft_atoi(str[i]);
-		i++;
-	}
-	i = 0;
-	while (i < length)
-	{
-		printf("%d\n", integers[i]);
+		x = matoi(str[i]);
+		if (x < -2147483648 || x > 2147483647)
+		{
+			free(integers);
+			ft_free(str, length - 1);
+			return (NULL);
+		}
+		integers[i] = (int)x;
 		i++;
 	}
 	ft_free(str, length - 1);

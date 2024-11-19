@@ -6,7 +6,7 @@
 /*   By: hverdugo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 15:59:29 by hverdugo          #+#    #+#             */
-/*   Updated: 2024/11/14 01:12:20 by hverdugo         ###   ########.fr       */
+/*   Updated: 2024/11/15 13:54:32 by hverdugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,17 +36,13 @@ int	main(int argc, char **argv)
 	}
 	stack_bucle(&stack_a, str, length);
 	expected_pos(&stack_a);
-	fill_stackb(&stack_a, &stack_b);
-	set_cost(&stack_a, &stack_b);
-	find_target(&stack_a, &stack_b, length);
-	temp = stack_b;
-	printf("	Ca		Cb		\n");
+	algorithm(&stack_a, &stack_b, length);
+	temp = stack_a;
 	while (temp)
 	{
-		printf("	%d		%d\n", temp->cost_a, temp->cost_b);
+		printf("%d\n", temp->index);
 		temp = temp->next;
 	}
 	free_stack(&stack_a);
-	free_stack(&stack_b);
 	return (0);
 }

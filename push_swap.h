@@ -6,7 +6,7 @@
 /*   By: hverdugo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 21:00:09 by hverdugo          #+#    #+#             */
-/*   Updated: 2024/11/14 00:54:29 by hverdugo         ###   ########.fr       */
+/*   Updated: 2024/11/15 16:46:52 by hverdugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ int		*eval_rep(char **str, int length);
 int		*arg_eval(char **argv, int argc, long int *length);
 int		*rep(int *integers, int length);
 int		is_sorted(t_stack *stack);
+long	matoi(const char *str);
 void	free_stack(t_stack **stack);
 void	stack_bucle(t_stack **stack, int *value, int length);
 void	stack_fill(t_stack **stack, t_stack *snew);
@@ -60,6 +61,8 @@ void	set_cost(t_stack **stack_a, t_stack **stack_b);
 void	fill_stackb(t_stack **stack_a, t_stack **stack_b);
 void	fill_pos(t_stack **stack_a, t_stack **stack_b);
 void	find_target(t_stack **stack_a, t_stack **stack_b, int length);
+void	move(t_stack **stack_a, t_stack **stack_b, int length);
+void	algorithm(t_stack **stack_a, t_stack **stack_b, int length);
 t_stack	*end(t_stack *stack);
 t_stack	*penultimate(t_stack *stack);
 t_stack	*stack_new(int value);

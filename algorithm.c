@@ -6,7 +6,7 @@
 /*   By: hverdugo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 16:00:09 by hverdugo          #+#    #+#             */
-/*   Updated: 2024/11/13 13:11:28 by hverdugo         ###   ########.fr       */
+/*   Updated: 2024/11/15 17:14:21 by hverdugo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,16 +54,27 @@ void	fill_pos(t_stack **stack_a, t_stack **stack_b)
 		temp = temp->next;
 	}
 }
-/*
-void	find_target(t_stack **stack_a, t_stack **stack_b)
-{
-	t_stack	*temp_a;
-	t_stack	*temp_b;
 
-	temp_a = *stack_a;
-	temp_b = *stack_b;
-	while (temp_b)
+void	algorithm(t_stack **stack_a, t_stack **stack_b, int length)
+{
+	int	j;
+
+	j = size_list(*stack_a);
+	if (j == 2)
 	{
-		while (temp_a)
-		{
-*/
+		if ((*stack_a)->num > (*stack_a)->next->num)
+			rotate_a(stack_a);
+	}
+	else if (j == 3)
+		three_stack(stack_a);
+	else
+		move(stack_a, stack_b, length);
+	j = size_list(*stack_a);
+	while ((*stack_a)->index != 1)
+	{
+		if ((*stack_a)->index <= (j + 1) / 2)
+			rrotate_a(stack_a);
+		else
+			rotate_a(stack_a);
+	}
+}
